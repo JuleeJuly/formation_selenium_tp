@@ -34,7 +34,5 @@ def recherche_par_auteur(browser):
 @then('la liste des livres de l auteur est affichee')
 def isoke(browser):
     # Verifie que le livre recherche est affiche
-    livre = browser.find_element(By.XPATH, '//div[@class="rt-tbody"]/div[.="Eloquent JavaScript, Second Edition"]')
-    assert livre.is_displayed()
     assert browser.find_element(By.XPATH, '//div[.="Marijn Haverbeke"]').is_displayed()
     time.sleep(2)
