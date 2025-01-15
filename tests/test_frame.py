@@ -26,13 +26,17 @@ def ouvrir_page_windows(browser):
 def open(browser):
     # Ouverture d'un nouvel onglet
     browser.find_element(By.ID, 'tabButton').click()
+    
+
+@when('le nouvel onglet est ouvert')
+def open(browser):
     # se positionner sur le nouvel onglet
     browser.switch_to.window(browser.window_handles[1])
     # verifier que le titre du nouvel onglet existe
     assert browser.find_element(By.ID, 'sampleHeading').is_displayed()
     time.sleep(1)
 
-@then('le nouvel onglet est ouvert et je peux le fermer')
+@then('je peux le fermer')
 def isoke(browser):
     # fermer le nouvel onglet
     browser.close()
@@ -58,10 +62,13 @@ def open(browser):
     browser.find_element(By.ID, 'showLargeModal').click()
     time.sleep(1)
 
-@then('la popup s ouvre et affiche le texte attendu')
-def isoke(browser):
+@when('la popup est ouverte')
+def verif(browser):
     # verifier la presence du texte de la modale
     assert browser.find_element(By.XPATH, '//div[@class="modal-body"]/p').is_displayed()
+
+@then('le texte attendu est affiche')
+def isoke(browser):
     # recuperer le texte
     texte = browser.find_element(By.XPATH, '//div[@class="modal-body"]/p').text
     # le mot a chercher

@@ -9,5 +9,6 @@ Feature: Verifier les elements
 
     Scenario: Modifier les donnees dans les tableaux
         Given je suis sur la page webtables
-        When je supprime et modifie des utilisateurs
+        When je supprime des utilisateurs
+        And je modifie des utilisateurs
         Then les informations sont à jour

@@ -24,12 +24,15 @@ def ouvrir_page_table(browser):
     browser.fullscreen_window()
     time.sleep(1)
 
-@when('je supprime et modifie des utilisateurs')
+@when('je supprime des utilisateurs')
 def modification(browser):
     #suppression des deux derniers utilisateurs
     browser.find_element(By.ID, 'delete-record-2').click()
     browser.find_element(By.ID, 'delete-record-3').click()
     time.sleep(1)
+
+@when('je modifie des utilisateurs')
+def modification(browser):
     #modification du salaire du premier utilisateur
     browser.find_element(By.ID, 'edit-record-1').click()
     time.sleep(1)

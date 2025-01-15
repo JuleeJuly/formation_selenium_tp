@@ -5,9 +5,11 @@ Feature: Verifier les frames,les alertes et les fenetres
     Scenario: Ouverture d'un nouvel onglet
         Given je suis sur la page browser-windows
         When j ouvre un nouvel onglet
-        Then le nouvel onglet est ouvert et je peux le fermer
+        And le nouvel onglet est ouvert
+        Then je peux le fermer
 
     Scenario: Ouverture d'une fenetre modale
         Given je suis sur la page modal-dialogs
         When je choisis une grande popup
-        Then la popup s ouvre et affiche le texte attendu
+        And la popup est ouverte
+        Then le texte attendu est affiche
