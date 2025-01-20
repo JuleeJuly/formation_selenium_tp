@@ -1,8 +1,8 @@
-Feature: Bibliotheque
-    En tant qu'utilisateur
-    Je veux parcourir la Bibliotheque
+Feature: Library
+    As a user
+    I want to browse the library
 
-    Scenario: Rechercher un livre par auteur
-        Given je suis sur la page books
-        When je recherche un livre par auteur
-        Then la liste des livres de l auteur est affichee
+    Scenario: Search for a book by author
+        Given I am on the books page
+        When I search for a book by author
+        Then the list of books by the author is displayed
